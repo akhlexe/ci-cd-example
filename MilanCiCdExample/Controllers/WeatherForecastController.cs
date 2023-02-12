@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MilanCiCdExample.Controllers
 {
+    // Comentario para triggerear pipeline
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
