@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MilanCiCdExample;
 using MilanCiCdExample.Controllers;
