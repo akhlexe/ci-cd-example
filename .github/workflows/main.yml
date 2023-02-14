@@ -6,6 +6,7 @@ on:
     branches:
     - master
     
+    
 env:
   AZURE_WEBAPP_NAME: epinero-weather-app
   AZURE_WEBAPP_PACKAGE_PATH: "./publish"
