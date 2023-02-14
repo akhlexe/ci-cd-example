@@ -21,15 +21,6 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0.x'
-          
-      - name: Start SQL Server 🐳
-        run: |
-          docker run -d -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=pass~w0rD!" -e "MSSQL_PID=Express" -p 1433:1433 -d mcr.microsoft.com/mssql/server:latest
-
-      - name: Sleep for 5 seconds 😴
-        uses: jakejarvis/wait-action@master
-        with:
-          time: '5s'
 
       - name: Restore
         run: dotnet restore ./MilanCiCdExample.sln
@@ -38,8 +29,6 @@ jobs:
         run: dotnet build ./MilanCiCdExample.sln -c Release --no-restore
 
       - name: Run automated tests 🧪
-        env:
-          ConnectionStrings__DefaultConnection: Server=localhost;Database=PokemonDatabase_Test;User=sa;Password=pass~w0rD!
         run: dotnet test ./MilanCiCdExample.sln -c Release --no-build
 
       - name: Publish
